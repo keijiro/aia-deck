@@ -31,7 +31,8 @@ fonts:
 # Game Development with Unity AI
 
 ---
-layout: two-cols
+layout: image-right
+image: /Title_Heroes.png
 ---
 
 # Generators
@@ -42,15 +43,6 @@ layout: two-cols
   - 3D モデル生成
   - キャラクターアニメーション生成
   - サウンド生成（効果音、台詞、音楽）
-
-::right::
-
-<img src="/Title_Heroes.png" alt="Title Heroes" />
-
-<style>
-.two-columns { grid-template-columns: 3fr 1fr; }
-.two-columns .col-right { display: flex; flex-direction: column; justify-content: flex-end; }
-</style>
 
 <!--
 最後に Generator という、アセット生成機能のコレクションが存在します。ここでは様々なサードパーティの生成モデルを使用して、各種のアセットを生成することができます。
