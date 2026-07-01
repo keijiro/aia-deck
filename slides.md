@@ -45,7 +45,7 @@ layout: two-cols
 
 ::right::
 
-<img src="/img/Title_Heroes.png" alt="Title Heroes" />
+<img src="/Title_Heroes.png" alt="Title Heroes" />
 
 <style>
 .two-columns { grid-template-columns: 3fr 1fr; }
