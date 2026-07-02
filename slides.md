@@ -300,14 +300,13 @@ image: /dm-glb-embedded-texture.png
 
 ---
 layout: image-right
-image: /dm-glb-embedded-texture.png
+image: /dm-glb-embedded-texture-tweaked.png
 ---
 
-# 埋め込みテクスチャの調整
+# glTFast Tweaks
 
-- 設定をオーバーライドするためのツールを作成した
-  - glTFast Tweaks
-  - https://github.com/keijiro/glTFastTweaks
+- 設定を上書きするツールを作成した
+- github.com/keijiro/glTFastTweaks
 
 <!--
 そこで、このインポート設定をオーバーライドするためのツールを作成しました。glTFast Tweaks という名前のパッケージです。このツールは glTFast のアドオンとして動作して、テクスチャのインポート中にその設定を書き換えることができます。これで画像サイズを縮小したり、テクスチャ圧縮を有効化したりできます。
