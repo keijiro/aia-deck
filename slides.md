@@ -28,7 +28,7 @@ layout: cover
 # Project: Drift Mayhem
 
 ---
-layout: two-cols
+layout: two-cols-video
 ---
 
 # ゲーム概要
@@ -39,11 +39,9 @@ layout: two-cols
 
 ::right::
 
-<div class="h-full flex items-center justify-center">
-  <video muted autoplay loop class="w-full">
-    <source src="/dm-pr-hq.mp4" type="video/mp4" />
-  </video>
-</div>
+<SlidevVideo muted autoplay loop>
+  <source src="/dm-pr-hq.mp4" type="video/mp4" />
+</SlidevVideo>
 
 <!--
 このゲームは「ドリフトをきめながらマシンガンで敵を蜂の巣にしたらカッコいいのではないか」というアイデアを思いついて、それを検証するためだけに作った、いわゆるバーティカルスライス的なプロトタイプです。まさにこのアイデアを検証するための部分だけが実装されていて、敵も一種類しか存在しませんし、プレイヤー側の操作も最低限のものしか実装されていません。
@@ -79,7 +77,7 @@ layout: section
 -->
 
 ---
-layout: two-cols
+layout: two-cols-video
 ---
 
 # 無限地形生成システム
@@ -96,11 +94,9 @@ layout: two-cols
 
 ::right::
 
-<div class="h-full flex items-center justify-center">
-  <video muted autoplay loop class="w-full">
-    <source src="/dm-ground-generation.mp4" type="video/mp4" />
-  </video>
-</div>
+<SlidevVideo muted autoplay loop>
+  <source src="/dm-ground-generation.mp4" type="video/mp4" />
+</SlidevVideo>
 
 <!--
 まず最初にプロシージャルな無限地形生成システムを作ってもらいました。荒野を走り回りながら敵を次々に倒していく、という内容にしたかったので、それに必要な荒野の地形を自動的に生成できるようにしたかったんですよね。
@@ -111,6 +107,8 @@ layout: two-cols
 -->
 
 ---
+layout: two-cols-video
+---
 
 # 地形用シェーダー
 
@@ -119,7 +117,12 @@ layout: two-cols
   - 大量のボイラープレート
   - バージョン毎の細かな差異
 - Unity Default では難しかった
-- 簡単な Shader Graph を手動で作成
+
+::right::
+
+<SlidevVideo muted autoplay loop>
+  <source src="/dm-wrong-shader.mp4" type="video/mp4" />
+</SlidevVideo>
 
 <!--
 今回はローポリ風の絵作りを目指していたので、最初は地面に何もテクスチャを貼らずに動かしていました。しかし、何らかの模様が地面についていないとスピード感が出にくいというのが分かりました。そこで、頂点カラーを使った簡単なチェッカー模様を付けることにしました。
@@ -132,6 +135,19 @@ layout: two-cols
 
 恐らく色々お膳立てすれば生成できなくも無いと思うのですが、コスト対効果は決して良くないでしょう。
 
+今回は、実現したいことは非常に簡単な内容だったため、Shader Graph を手動で作成することで解決しました。
+-->
+
+---
+layout: image-right
+image: /dm-shader-graph.png
+---
+
+# 地形用シェーダー
+
+- 簡単な Shader Graph を手動で作成
+
+<!--
 今回は、実現したいことは非常に簡単な内容だったため、Shader Graph を手動で作成することで解決しました。
 -->
 
