@@ -171,6 +171,8 @@ image: /dm-shader-reflection.jpg
 -->
 
 ---
+layout: two-cols-video
+---
 
 # 車の挙動の作り込み
 
@@ -190,6 +192,12 @@ image: /dm-shader-reflection.jpg
 
 - 敢えて物理挙動を使うよう指示
 
+::right::
+
+<SlidevVideo muted autoplay loop>
+  <source src="/dm-physics-arcade-style.mp4" type="video/mp4" />
+</SlidevVideo>
+
 <!--
 さて、次に車の挙動の作り込みを行いました。実は、AI エージェントは最初のプロトタイプとして、擬似物理、いわゆるアーケードスタイルの挙動を実装してきたんですよね。車輪のシミュレーションを行わず、単一の rigid body で擬似的に車の動きを表現する、というものです。
 
@@ -204,7 +212,7 @@ image: /dm-shader-reflection.jpg
 
 ---
 layout: video
-video: /dm-test.mp4
+video: /dm-drift-prototype.mp4
 ---
 
 # ドリフト挙動の初期実装
@@ -215,7 +223,7 @@ video: /dm-test.mp4
 
 ---
 layout: video
-video: /dm-test.mp4
+video: /dm-drift-rework.mp4
 ---
 
 # ドリフト挙動の改良
@@ -229,8 +237,12 @@ video: /dm-test.mp4
 -->
 
 ---
-layout: image-right
-image: /Title_Heroes.png
+layout: video
+video: /dm-drift-finished.mp4
+---
+
+# ドリフト挙動の改良
+
 ---
 
 # Unity Default の効果
