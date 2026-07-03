@@ -6,4 +6,6 @@ dist
 .remote-assets
 components.d.ts
 
+*-hq.mp4
+
 /.claude

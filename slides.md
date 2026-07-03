@@ -1,55 +1,34 @@
 ---
-# try also 'default' to start simple
 theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
-# some information about your slides (markdown enabled)
-title: Welcome to Slidev
-info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
-# apply UnoCSS classes to the current slide
+title: Unity AI Examples
 class: text-center
-# https://sli.dev/features/drawing
+
 drawings:
   persist: false
-# slide transition: https://sli.dev/guide/animations.html#slide-transitions
+
 transition: slide-left
-# enable Comark Syntax: https://comark.dev/syntax/markdown
+
 comark: true
-# duration of the presentation
-duration: 35min
-# fonts loaded from Google Fonts
+
+duration: 40min
+
 fonts:
   sans: PT Serif
   provider: google
 ---
 
-# Game Development with Unity AI
+# Unity AI
 
 ---
-layout: image-right
-image: /Title_Heroes.png
+layout: cover
 ---
 
-# Generators
+<BgVideo src="/dm-pr-hq.mp4" />
 
-- アセット生成機能
-  - 画像生成（スプライト、テクスチャ、キューブマップ、マテリアル）
-  - スプライトアニメーション生成（動画→スプライトシート）
-  - 3D モデル生成
-  - キャラクターアニメーション生成
-  - サウンド生成（効果音、台詞、音楽）
+# Project: Drift Mayhem
 
-<!--
-最後に Generator という、アセット生成機能のコレクションが存在します。ここでは様々なサードパーティの生成モデルを使用して、各種のアセットを生成することができます。
-
-この画像のように Generator ウィンドウを使って自分でプロンプトを打ち込んで生成することができます。また、AI Assistant もこの Generator を使用する能力を持っているので、生成を AI Assistant に任せて自動化することも可能です。
--->
-
+---
+layout: two-cols
 ---
 
 # ゲーム概要
@@ -57,6 +36,14 @@ image: /Title_Heroes.png
 - 「ドリフトをきめながらマシンガンで敵を蜂の巣にしたらカッコいいのではないか」
 - アイデア検証用のバーティカルスライス
 - ゲームとして必要最低限の内容
+
+::right::
+
+<div class="h-full flex items-center justify-center">
+  <video muted autoplay loop class="w-full">
+    <source src="/dm-pr-hq.mp4" type="video/mp4" />
+  </video>
+</div>
 
 <!--
 このゲームは「ドリフトをきめながらマシンガンで敵を蜂の巣にしたらカッコいいのではないか」というアイデアを思いついて、それを検証するためだけに作った、いわゆるバーティカルスライス的なプロトタイプです。まさにこのアイデアを検証するための部分だけが実装されていて、敵も一種類しか存在しませんし、プレイヤー側の操作も最低限のものしか実装されていません。
@@ -70,6 +57,7 @@ image: /Title_Heroes.png
 
 - Unity Default を使用
 - 3D ゲームの開発に挑戦
+  - Tripo P1 の評価
 - 短期間での開発（実質３日間）
 
 <!--
@@ -139,14 +127,15 @@ image: /Title_Heroes.png
 -->
 
 ---
+layout: image-right
+image: /dm-shader-reflection.jpg
+---
 
 # もしシェーダー生成をするなら？
 
 - Shader Function Reflection API
   - Unity 6.5 移行で利用可能
   - HLSL シェーダーをカスタムノード化
-
-https://docs.unity3d.com/Packages/com.unity.shadergraph@17.5/manual/Custom-nodes-hlsl-create-node-by-reflection.html
 
 <!--
 複雑なシェーダーをどうしてもAI に書いてもらいたい場合は、Unity 6.5 で導入された Sahder Function Reflection API を使用するのが良いと思います。これは、HLSL シェーダーにコメントとしてリフレクション情報を埋め込む、という仕組みです。これを使うことで、HLSL シェーダー関数が Shader Graph 上のカスタムノードとして利用可能になります。
