@@ -3,3 +3,7 @@
 .slidev-layout {
   font-family: 'PT Serif', 'Noto Serif JP', serif;
 }
+
+.slidev-layout blockquote p {
+  margin-block: 0.75em;
+}
