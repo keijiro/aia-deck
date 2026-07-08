@@ -173,10 +173,15 @@ layout: section
 
 ---
 
+<div class="h-full flex flex-col">
+
 # レトロゲーム風エフェクト
 
-- 比較画像
 - 過去に開発した "KinoEight" エフェクトを使用
+
+<img src="/mm-filter-comparison.png" class="flex-1 min-h-0 w-full object-contain mt-4" style="image-rendering: pixelated;" />
+
+</div>
 
 <!--
 このプロジェクトでは、postprocessing エフェクトを使ってこのレトロゲーム風の見た目を作り出しています。この上側の画像がエフェクト無しで表示を行った場合のもので、エフェクトをかけることで、この下側のような見た目になるわけですね。使用する色の数や解像度を落とした上でディザリング等をかけることで、この見た目を作り出しています。
@@ -197,17 +202,47 @@ layout: section
 
 <!--
 このエフェクトを入れた理由ですが、実は、レトロゲーム風の見た目にしたかったわけではありません。他の理由があります。それは「アセットの持つ情報密度の均一化」です。
+
+これは、体型付けられた理論ではありませんし、教科書に載っているようなことでもなく、僕が勝手に言っていることなので、話半分に聞いてもらいたいのですが、スプライト等の画像アセットの見た目を印象付ける要素の一つとして、「情報量の密度」というものがあります。それは例えば、絵としての描き込みの細かさや、色彩の深さなどを表します。
 -->
 
 ---
 
+<div class="h-full flex flex-col">
+
 # 情報密度の均一化
 
-- 模式図
+<div class="flex-1 min-h-0 flex flex-col items-center justify-center gap-6">
+
+<div class="flex flex-col items-center gap-2">
+  <div class="flex gap-4 items-center">
+    <DensityTile :n="11" :palette="['#c0392b', '#27ae60', '#2980b9', '#8e44ad', '#f39c12', '#16a085', '#e67e22', '#2c3e50']" />
+    <DensityTile :n="8" :palette="['#e74c3c', '#3498db', '#f1c40f', '#9b59b6', '#1abc9c', '#e67e22']" />
+    <DensityTile :n="6" :palette="['#2980b9', '#e67e22']" :seed="42" />
+  </div>
+</div>
+
+<div class="relative flex items-center justify-center h-24 opacity-70">
+  <svg width="28" height="96" viewBox="0 0 28 96">
+    <line x1="14" y1="2" x2="14" y2="86" stroke="currentColor" stroke-width="2" />
+    <path d="M5 76 L14 92 L23 76" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+  <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-1 text-sm border rounded bg-white dark:bg-[#121212]" style="border-color: currentColor;">filtering</div>
+</div>
+
+<div class="flex flex-col items-center gap-2">
+  <div class="flex gap-4 items-center">
+    <DensityTile :n="6" :palette="['#2980b9', '#e67e22']" />
+    <DensityTile :n="6" :palette="['#2980b9', '#e67e22']" />
+    <DensityTile :n="6" :palette="['#2980b9', '#e67e22']" :seed="42" />
+  </div>
+</div>
+
+</div>
+
+</div>
 
 <!--
-これは、体型付けられた理論ではありませんし、教科書に載っているようなことでもなく、僕が勝手に言っていることなので、話半分に聞いてもらいたいのですが、スプライト等の画像アセットの見た目を印象付ける要素の一つとして、「情報量の密度」というものがあります。それは例えば、絵としての描き込みの細かさや、色彩の深さなどを表します。
-
 そして、この密度がアセットによってバラバラだと、それらのアセットを統合している感覚が薄れます。何か寄せ集めを切り貼りしたような、コラージュ的な見た目になってしまうんですね。
 
 これを強制的に均一化するためのテクニックとして、「一旦すべてのアセットの情報量を削って落とす」というものがあります。密度の低い方に合わせることで統合された感じを生み出そうというわけですね。
