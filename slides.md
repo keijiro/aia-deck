@@ -17,7 +17,107 @@ fonts:
   provider: google
 ---
 
-# Unity AI
+# Developing with Unity AI: Practical Use Cases
+
+## Keijiro Takahashi
+
+<!--
+みなさんこんにちは。Unity Technologies Japan の高橋啓治郎と申します。
+
+このセッションでは Unity AI を実際のプロジェクトで使用した体験についてお話しします。僕は Unity AI を実際に幾つかのゲームプロジェクトや技術デモの制作に使用しました。そこで Unity AI が実際のプロジェクト開発においてどのように使えるのか、ということについて、様々な知見を得ることができました。今日はそれらの知見について皆さんと共有したいと思います。
+-->
+
+---
+layout: section
+---
+
+# プロジェクトの紹介
+
+<!--
+それではまず始めに、実際に Unity AI を使用して開発したプロジェクトを、順番に紹介していきます。
+-->
+
+---
+
+<SlidevVideo autoplay autoreset="slide" :muted="$renderContext !== 'slide'" class="absolute inset-0 w-full h-full object-cover">
+  <source src="/mm-pr-hq.mp4" type="video/mp4" />
+</SlidevVideo>
+
+---
+
+<div class="h-full flex flex-col">
+
+# Mirror Mage
+
+<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4">
+  <source src="/mm-pr-hq.mp4" type="video/mp4" />
+</SlidevVideo>
+
+</div>
+
+<!--
+まず最初のこのプロジェクトは "Mirror Mage" というカジュアルゲームです。敵の攻撃を反射して、それを攻撃に使う、というちょっと変わったシステムのアクションゲームです。
+-->
+
+---
+
+<SlidevVideo autoplay autoreset="slide" :muted="$renderContext !== 'slide'" class="absolute inset-0 w-full h-full object-cover">
+  <source src="/mh-pr-hq.mp4" type="video/mp4" />
+</SlidevVideo>
+
+---
+
+<div class="h-full flex flex-col">
+
+# Dungeon Match Heroes
+
+<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4">
+  <source src="/mh-pr-hq.mp4" type="video/mp4" />
+</SlidevVideo>
+
+</div>
+
+<!--
+次のプロジェクトは "Dungeon Match Heroes" というカジュアルゲームです。マッチ３パズルゲームに RPG のエッセンスを加えたようなゲームですね。
+-->
+
+---
+
+<SlidevVideo autoplay autoreset="slide" :muted="$renderContext !== 'slide'" class="absolute inset-0 w-full h-full object-cover">
+  <source src="/dm-pr-hq.mp4" type="video/mp4" />
+</SlidevVideo>
+
+---
+
+<div class="h-full flex flex-col">
+
+# Drift Mayhem
+
+<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4">
+  <source src="/dm-pr-hq.mp4" type="video/mp4" />
+</SlidevVideo>
+
+</div>
+
+<!--
+３つ目は "Drift Mayhem" という、オフロードカー・シミュレーションとシューティングゲームが融合したようなゲームのプロトタイプですね。
+-->
+
+---
+
+<div class="h-full flex flex-col">
+
+# Mesh Slicer
+
+<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4">
+  <source src="/ms-demo-hq.mp4" type="video/mp4" />
+</SlidevVideo>
+
+</div>
+
+<!--
+そして最後に、これはゲームではなく技術デモですが、3D モデルをマウスで切断する処理を開発して、それのインタラクティブデモを作成しました。
+-->
 
 ---
 layout: cover
