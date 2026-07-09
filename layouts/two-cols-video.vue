@@ -10,7 +10,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="slidev-layout two-columns w-full h-full grid grid-cols-2 auto-rows-fr" :class="props.layoutClass">
+  <div class="slidev-layout two-columns w-full h-full grid grid-cols-2 auto-rows-fr gap-x-8" :class="props.layoutClass">
     <div class="col-left min-h-0" :class="props.class">
       <slot />
       <slot name="left" />
