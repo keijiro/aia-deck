@@ -196,6 +196,44 @@ layout: section
 
 ---
 
+<div class="h-full flex flex-col justify-center px-10">
+<div class="grid items-center gap-x-6 gap-y-4" style="grid-template-columns: auto 1fr auto;">
+<div class="flex justify-center">
+<div class="relative" style="width:206px;height:136px">
+<img src="/mm-pr-hq-thumb.png" class="absolute w-40 rounded shadow" style="top:0;left:0" />
+<img src="/mh-pr-hq-thumb.png" class="absolute w-40 rounded shadow" style="top:22px;left:22px" />
+<img src="/dm-pr-hq-thumb.png" class="absolute w-40 rounded shadow" style="top:44px;left:44px" />
+</div>
+</div>
+<div class="flex flex-col items-center gap-1">
+<svg width="164" height="120" viewBox="0 0 260 190" fill="none" stroke="currentColor" stroke-width="3">
+<defs><marker id="tA" viewBox="0 0 10 10" markerWidth="6" markerHeight="6" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="currentColor" stroke="none" /></marker></defs>
+<text x="45" y="108" text-anchor="middle" dominant-baseline="central" style="font-size:58px" stroke="none" fill="currentColor">🧑</text>
+<text x="215" y="108" text-anchor="middle" dominant-baseline="central" style="font-size:58px" stroke="none" fill="currentColor">🤖</text>
+<path d="M45 70 V55 Q45 45 55 45 H205 Q215 45 215 55 V70" marker-end="url(#tA)" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M215 146 V160 Q215 170 205 170 H55 Q45 170 45 160 V146" marker-end="url(#tA)" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+<div class="text-lg font-bold">対話的</div>
+</div>
+<div class="text-lg text-center">主力／軽量モデル</div>
+<div style="grid-column:1/-1" class="border-t border-gray-300"></div>
+<div class="flex justify-center">
+<img src="/ms-demo-hq-thumb.png" class="w-40 rounded shadow" />
+</div>
+<div class="flex flex-col items-center gap-1">
+<svg width="189" height="120" viewBox="0 0 300 190" fill="none" stroke="currentColor" stroke-width="3">
+<defs><marker id="tB" viewBox="0 0 10 10" markerWidth="6" markerHeight="6" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="currentColor" stroke="none" /></marker></defs>
+<text x="35" y="108" text-anchor="middle" dominant-baseline="central" style="font-size:58px" stroke="none" fill="currentColor">🧑</text>
+<text x="195" y="108" text-anchor="middle" dominant-baseline="central" style="font-size:58px" stroke="none" fill="currentColor">🤖</text>
+<path d="M73 108 H157" marker-end="url(#tB)" stroke-linecap="round" />
+<path d="M195 146 V161 Q195 171 205 171 H265 Q275 171 275 161 V38 Q275 28 265 28 H205 Q195 28 195 38 V70" marker-end="url(#tB)" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+<div class="text-lg font-bold">自律的</div>
+</div>
+<div class="text-lg text-center">フロンティアモデル</div>
+</div>
+</div>
+
 <!--
 僕のプロジェクトでも 3D モデルのメッシュを切断するという処理には、文化的な判断や社会的な要素も存在しませんので、このカテゴリに属することになります。ここでは、人間の手を介在させない、自律的開発のアプローチが有効になり得ます。ここでは Opus 4.8 のようなフロンティアモデルを使用しました。
 
