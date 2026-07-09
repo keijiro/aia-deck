@@ -100,7 +100,7 @@ layout: section
 </div>
 
 <!--
-３つ目は "Drift Mayhem" という、オフロードカー・シミュレーションとシューティングゲームが融合したようなゲームのプロトタイプですね。
+３つ目は "Drift Mayhem" という、オフロードカー・シミュレーションとシューティングが融合したようなゲームのプロトタイプですね。
 -->
 
 ---
@@ -116,7 +116,92 @@ layout: section
 </div>
 
 <!--
-そして最後に、これはゲームではなく技術デモですが、3D モデルをマウスで切断する処理を開発して、それのインタラクティブデモを作成しました。
+そして最後に、これはゲームではなく技術デモですが、Mesh Slicer というプロジェクトです。3D モデルをマウスで切断する処理を開発して、それのインタラクティブデモを作成しました。
+-->
+
+---
+layout: section
+---
+
+# 開発アプローチの分類
+
+<!--
+さて、これらのプロジェクトの解説に入る前に、AI エージェントを使った開発アプローチの分類について触れたいと思います。
+
+というのも、AI エージェントをゲーム開発に使用するにあたっては、そのエージェントの使い方・動かし方について、いくつかの異なるアプローチが存在すると考えています。
+-->
+
+---
+
+<div class="h-full flex flex-col">
+
+<div class="flex-1 min-h-0 flex items-center justify-center gap-16">
+
+<div class="flex flex-col items-center justify-center gap-8">
+  <div class="text-xl">対話的</div>
+  <svg width="260" height="220" viewBox="0 0 260 220" fill="none" stroke="currentColor" stroke-width="2">
+    <defs>
+      <marker id="ahA" viewBox="0 0 10 10" markerWidth="6" markerHeight="6" refX="9" refY="5" orient="auto">
+        <path d="M0 0 L10 5 L0 10 Z" fill="currentColor" stroke="none" />
+      </marker>
+    </defs>
+    <text x="45" y="108" text-anchor="middle" dominant-baseline="central" style="font-size:58px" stroke="none" fill="currentColor">🧑</text>
+    <text x="215" y="108" text-anchor="middle" dominant-baseline="central" style="font-size:58px" stroke="none" fill="currentColor">🤖</text>
+    <path d="M45 70 V55 Q45 45 55 45 H205 Q215 45 215 55 V70" marker-end="url(#ahA)" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M215 146 V160 Q215 170 205 170 H55 Q45 170 45 160 V146" marker-end="url(#ahA)" stroke-linecap="round" stroke-linejoin="round" />
+    <text x="130" y="18" text-anchor="middle" dominant-baseline="central" style="font-size:34px" stroke="none" fill="currentColor">💬</text>
+    <text x="130" y="197" text-anchor="middle" dominant-baseline="central" style="font-size:34px" stroke="none" fill="currentColor">💬</text>
+  </svg>
+</div>
+
+<div class="w-px self-center h-48 bg-gray-400 opacity-30"></div>
+
+<div class="flex flex-col items-center justify-center gap-8">
+  <div class="text-xl">自律的</div>
+  <svg width="330" height="190" viewBox="0 0 330 190" fill="none" stroke="currentColor" stroke-width="2">
+    <defs>
+      <marker id="ahB" viewBox="0 0 10 10" markerWidth="6" markerHeight="6" refX="9" refY="5" orient="auto">
+        <path d="M0 0 L10 5 L0 10 Z" fill="currentColor" stroke="none" />
+      </marker>
+    </defs>
+    <text x="35" y="108" text-anchor="middle" dominant-baseline="central" style="font-size:58px" stroke="none" fill="currentColor">🧑</text>
+    <text x="195" y="108" text-anchor="middle" dominant-baseline="central" style="font-size:58px" stroke="none" fill="currentColor">🤖</text>
+    <path d="M73 108 H157" marker-end="url(#ahB)" stroke-linecap="round" />
+    <path d="M195 146 V161 Q195 171 205 171 H265 Q275 171 275 161 V38 Q275 28 265 28 H205 Q195 28 195 38 V70" marker-end="url(#ahB)" stroke-linecap="round" stroke-linejoin="round" />
+    <text x="115" y="76" text-anchor="middle" dominant-baseline="central" style="font-size:34px" stroke="none" fill="currentColor">📄</text>
+    <text x="300" y="100" text-anchor="middle" dominant-baseline="central" style="font-size:34px" stroke="none" fill="currentColor">⚙️</text>
+  </svg>
+</div>
+
+</div>
+
+</div>
+
+<!--
+
+１つは AI エージェントとの対話的な開発アプローチ、もう１つは、AI エージェントを独立して長時間実行させる自律的な開発アプローチです。
+
+前者は人間の手が介在することを前提とした、いわゆる human-in-the-loop なスタイルですね。それに対して後者は、人間の手が介在する要素を極力排除して、なるべく AI エージェントが止まることなく動き続けることを目標にします。
+
+昨今は自律的実行性能の高いフロンティアモデルを使用して、この自律的なアプローチでどれだけ効率的に開発を進めるか、というのが注目を集めていますよね。
+
+ですが、ここは意見の分かれるところになると思いますが、実際のゲーム開発においては対話的な要素を完全に無くすことは難しいと思います。
+
+これは皆さん直感的に分かることだと思いますが、ゲームの評価は人間の感覚に頼る部分が多くあります。実際に見たり触ったりしないと良いか悪いかわからない、という部分ですね。
+
+またそういった感覚的な要素だけでなく、例えばユーザの反応はどうなるだろうか、とか、過去の作品とどう連続性を持つか、とか、現時点の文化においてどういった意味を持ちうるか、とか、自分たちのビジネスとどう接続されるのか、とか、そういった社会的な文脈を持って判断を行なっていくことは、非常に難しいことです。そこから人の手と頭脳を排除していくほどに、その判断能力は希薄化していく気がしています。
+
+ただその反面、そういった判断が必要とされないタスクも、ゲーム開発には数多く存在します。例えば、効率的なデータ構造を設計して、それに関するツールを揃えて欲しい、とか、特定の用途に合わせた効率的なシーケンス制御を組んで欲しいとか、そういった類のものですね。
+-->
+
+---
+
+<!--
+僕のプロジェクトでも 3D モデルのメッシュを切断するという処理には、文化的な判断や社会的な要素も存在しませんので、このカテゴリに属することになります。ここでは、人間の手を介在させない、自律的開発のアプローチが有効になり得ます。ここでは Opus 4.8 のようなフロンティアモデルを使用しました。
+
+それ以外のゲームプロジェクトについては、対話的な開発アプローチをとりました。そして、対話を効率良く、つまりレスポンス良く低コストに進めるために、比較的軽量なモデル、Unity Lite や Unity Default を使用しました。
+
+このような分類と、それによるツールやモデルの選択は、これらのプロジェクトにおいて意識的に行なっていくことになりますので、まず最初にここで整理しておきました。
 -->
 
 ---
