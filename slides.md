@@ -1467,30 +1467,52 @@ layout: cover
 
 ---
 
+<div class="h-full flex flex-col">
+
 # 開発背景
 
 - MCP Server と外部エージェントを使った長時間実行タスクのテスト
 
+<div class="flex-1 min-h-0 flex items-center justify-center">
+  <svg width="570" height="190" viewBox="-120 0 570 190" fill="none" stroke="currentColor" stroke-width="2">
+    <defs>
+      <marker id="ahB72" viewBox="0 0 10 10" markerWidth="6" markerHeight="6" refX="9" refY="5" orient="auto">
+        <path d="M0 0 L10 5 L0 10 Z" fill="currentColor" stroke="none" />
+      </marker>
+    </defs>
+    <text x="35" y="108" text-anchor="middle" dominant-baseline="central" style="font-size:58px" stroke="none" fill="currentColor">🧑</text>
+    <text x="195" y="108" text-anchor="middle" dominant-baseline="central" style="font-size:58px" stroke="none" fill="currentColor">🤖</text>
+    <path d="M73 108 H157" marker-end="url(#ahB72)" stroke-linecap="round" />
+    <path d="M195 146 V161 Q195 171 205 171 H265 Q275 171 275 161 V38 Q275 28 265 28 H205 Q195 28 195 38 V70" marker-end="url(#ahB72)" stroke-linecap="round" stroke-linejoin="round" />
+    <text x="115" y="76" text-anchor="middle" dominant-baseline="central" style="font-size:34px" stroke="none" fill="currentColor">📄</text>
+    <text x="300" y="100" text-anchor="middle" dominant-baseline="central" style="font-size:34px" stroke="none" fill="currentColor">⚙️</text>
+    <text x="385" y="78" text-anchor="middle" dominant-baseline="central" style="font-size:17px" stroke="none" fill="currentColor">数十分</text>
+    <text x="385" y="100" text-anchor="middle" dominant-baseline="central" style="font-size:17px" stroke="none" fill="currentColor">〜</text>
+    <text x="385" y="122" text-anchor="middle" dominant-baseline="central" style="font-size:17px" stroke="none" fill="currentColor">数時間</text>
+  </svg>
+</div>
+
+</div>
+
 <!--
-開発背景についてですが、このプロジェクトは MCP Server を利用した長時間タスクの実行を試すために立ち上げたものです。フロンティアモデルを使用した AI 駆動開発においては、数十分とか数時間、数十時間といった長時間にわたるセッションを人間の手の介在無しに自律実行するわけですが、Unity の AI Assistant は、現状そのような用途に特化されていません。もしそのような開発スタイルを実践したいと思ったら、外部の AI エージェントから MCP を使って Unity Editor と連携する必要があります。
+開発背景についてですが、このプロジェクトは MCP Server を利用した長時間タスクの自律実行を試すために立ち上げたものです。
+
+フロンティアモデルを使用した AI 駆動開発においては、数十分とか数時間といった長時間にわたるセッションを人間の手の介在無しに、自律的に実行することがありますが、Unity の AI Assistant は、現状このような用途には特化されていません。
+
+もしこのような開発アプローチを実践したいと思ったら、外部の AI エージェントから MCP を使って Unity Editor と連携する、というのが理想的な組み合わせとなります。それを実際に試してみたというわけですね。
 -->
 
 ---
 
-# テスト可能性
+# Testability
 
-- 長時間タスクは自動テスト対応が必須
-- ゲーム開発は人間の主観に頼る部分が多い
-- いかに自動テスト可能な要素を分離するか
+- 長時間タスクは自動テスト化が必須
+- 自動テスト可能な部分を分離して扱う
 
 <!--
-そして、このような長時間タスクの自律実行において必須となるのが testability です。そこで取り組むタスクは自動テストによって検証が可能でなければならない、ということですね。そうでなければ、人間のチェックが必要になってしまい、そこでタスクは止まってしまいます。
+そして、このような長時間タスクの自律的実行において必須となるのが testability の確保です。そこで取り組むタスクは自動テストによって検証が可能でなければならない、ということですね。そうでなければ、人間によるチェックが必要になってしまい、そこで自律的実行は止まってしまいます。
 
-ここで問題となるのは、ゲーム開発における課題の多くが、人間の主観的なチェックを必要とするということです。ここまでに作ってきたゲームプロジェクトも、そのほとんどのタスクは、人間の評価を必要とするものでした。
-
-ゲーム開発においても、実際には自動テスト可能なタスクは沢山存在します。ただ、今回ここで扱っているような規模のカジュアルゲームでは、なかなか存在しないと言うのが正直なところだと思います。
-
-ただ今後は、こういったテスト可能性が AI 利用の鍵にもなるので、意識的に自動テスト可能な要素というのを独立させ、分離させていくような努力が必要になると思います。
+このプロジェクトでもインタラクティブ・デモの部分は人間の手による検証が必要なので、そこは分離して考えることにします。
 -->
 
 ---
@@ -1501,19 +1523,20 @@ layout: cover
   - Mesh を任意の平面で切断する機能を提供
   - 自動テストを用意
   - Unity MCP Server + Claude Code (Opus 4.8) を使用
+
 - SlicingDemo シーン
   - インタラクティブデモ
-  - Unity AI Assistant (Unity Lite) を使用
+  - AI Assistant (Unity Lite) を使用
 
 <!--
-以上を前提に、このプロジェクトの構成要素を解説したいと思います。まずは MeshSlicer クラスが存在しています。これが Mesh の切断機能を実装したものになっており、Test Runner を使用した自動テストが用意されていて、動作検証まで自律的に行えるようになっています。そしてこの部分は MCP Server と Opus 4.8 を使用して、長時間タスクとして自律開発を行わせました。
+以上を前提に、このプロジェクトの構成要素を解説します。まずは MeshSlicer クラスが存在します。これは Mesh の切断機能を提供するものになっており、Test Runner を使用した自動テストが用意されていて、動作検証まで AI エージェントが自律的に行えるようになっています。そしてこの部分は MCP Server と Opus 4.8 を使用して、長時間タスクとして自律的開発を行ってもらいました。
 
-その後に、この機能を使ったインタラクティブデモとして SlicingDemo というシーンと、一連のスクリプト、マウス操作とかを受け取る部分ですね、それを AI Assistant で作成しました。これはそんなに難しくない内容なので Unity Lite を使用しています。
+その後に、この機能を使ったインタラクティブデモとして SlicingDemo というシーンと、一連のスクリプト、マウス操作とかを受け取る部分ですね、それを AI Assistant で作成しました。これは比較的シンプルな内容なので Unity Lite を使用しています。
 -->
 
 ---
 
-# タスク設計
+# プロンプト
 
 <blockquote>
 
@@ -1525,19 +1548,23 @@ Unityにおいてメッシュオブジェクトを自由な平面で切断する
 
 頂点データは、position, normal, tangent, uv0まで対応します。切断面のuv0は(0,0)に固定とします。
 
-...
-</blockquote>
-
----
-
-# タスク設計（続き）
-
-<blockquote>
-...
-
 ここではTDD的なアプローチを用いるものとします。すなわち、機能の実装を行う前に網羅的なテストを実装する必要があります。テストの実行にはUnity標準のTest Runnerを使用します。
 
 テストには凸メッシュだけでなく、断面が複数ループ・入れ子（穴あき／アニュラス）になるケースを含めます。具体的にはトーラス、中空パイプ、開いた箱（トレイ状）、ボウル形状を含め、各断面で蓋が正しく閉じることを検証します。また、プロジェクトに含まれているfbxモデルも使用します。
+
+...
+</blockquote>
+
+<!--
+これが実際に使用したプロンプトですね。ざっくりと大まかに要件を述べつつ、Test Driven Development 的な手法で進めるように指示しています。
+
+まだもうちょっと続きがあります。
+-->
+
+---
+
+<blockquote>
+...
 
 実装は最初に最適化を考えない形で行います。ここでは正しさを重視し、パフォーマンスは考慮しません。その実装が完成したら、Mesh Rendererを使ってシーン上でのレンダリングも行い、あなた（AIエージェント）の視覚を利用した定性的な検証も行います。
 
@@ -1548,14 +1575,14 @@ Unityにおいてメッシュオブジェクトを自由な平面で切断する
 </blockquote>
 
 <!--
-これが実際に使用したプロンプトですね。ざっくりと大まかに要件を述べつつ、Test Driven Development 的な手法で進めるように指示しています。また、ナイーブな実装で基本的な動作を確定させてから、それをベースに最適化を行うように指示しています。つまり、計画、実装、確認、改良、というようなループを自律的に回すよう指示しているわけですね。
+続きの部分では開発の流れを指定していますね。まず最初は、パフォーマンスを考えずに正しさを重視したナイーブな実装を行うよう指示しています。そしてそれをベースに最適化を行い、結果を比較するように指示していますね。
+
+つまり、計画、実装、確認、改良、というようなループを自律的に回すよう指示しているわけです。
 -->
 
 ---
 
 <div class="h-full flex flex-col">
-
-# 長時間タスクの実行
 
 <SlidevVideo muted autoplay controls class="flex-1 min-h-0 w-full object-contain">
   <source src="/ms-long-session.mp4" type="video/mp4" />
@@ -1564,33 +1591,38 @@ Unityにおいてメッシュオブジェクトを自由な平面で切断する
 </div>
 
 <!--
-これは実際に実行している様子を早回しにしたものですね。完了までに約40分費やしています。今どきの長時間タスクでは何時間も自律的に実行するケースが少なくないので、これはまあ可愛いものですが、それでも AI Assistant でこのようなタスクを実行するのは難しいので、MCP Server と外部エージェントの組み合わせならではの光景ではあります。
+これは実際に実行している様子を早回しにしたものです。完了までに約50分費やしています。今どきの長時間タスクでは何時間も自律的に実行するケースがザラにあるので、これはまあ、まだ短い方だと思います。
+
+完了しましたね。ここに結果が提示されています。
 -->
 
 ---
 
-# 長時間タスクの実行（続き）
+<div class="h-full flex flex-col">
 
-- 実装完了
-- パフォーマンス比較
+<div class="flex-1 min-h-0 flex flex-col justify-center">
 
-**Performance (20,480-triangle icosphere, Editor)**
+#### Performance (20,480-triangle icosphere, Editor)
 
 | Naive | Burst | Speedup |
 |---|---|---|
 | 9.16 ms | 1.04 ms | 8.8x |
 
-<!--
-そして約40分後にタスクが完了しました。最適化の結果、パフォーマンスはX倍程度になったと報告されていますね。
+</div>
 
-あとのインタラクティブデモ部分については、これまでのプロジェクトと大差無いので割愛します。
+</div>
+
+<!--
+パフォーマンスの比較表がこちらです。Burst 対応によって 8.8 倍になったと書かれていますね。
+
+このあと、AI Assistant を使ってインタラクティブ・デモの部分を作成したわけですが、その部分については、今までのプロジェクトと大差無いので割愛します。
 -->
 
 ---
 layout: two-cols-video
 ---
 
-# 手動テスト
+# 不具合の発生と特定
 
 - 特定のアングルで穴が生じる不具合
 
@@ -1603,9 +1635,78 @@ layout: two-cols-video
 <!--
 それで、これで完成しました、となればハッピーエンドなのですが、実際にはそう上手くはいきませんでした。一見うまく動いているのですが、たまに切断面に穴が生じるという不具合が発生しました。
 
-これをテストするために切断面を手動で微調整できるテスト用シーンを作ってもらい、不具合の生じる条件を手動で特定しました。そして、その条件を保存したうえで、AI エージェントに原因を特定してもらう、というワークフローを経ました。
+これをテストするために切断面を手動で微調整できるテスト用シーンを作ってもらい、不具合の生じる条件を手動で特定しました。そして、その条件を保存したうえで、AI エージェントに原因を特定してもらう、というワークフローですね。
+-->
 
-結果として、切断面がメッシュのエッジをかすめるように交差する場合に、このような現象が発生することがある、ということが分かりました。この問題をちゃんと解決することはかなり難しいのですが、今回のようなゲーム用途の場合は、切断面を少しだけズラすということが許されます。そこで、問題が発生する状況を検出したら、切断面を少しだけズラして問題を回避する、というコードを組み込んでもらうことにしました。その結果として、動画でお見せしたような非常に安定した挙動が得られるようになりました。
+---
+
+<div class="h-full flex flex-col">
+
+<div class="flex-1 min-h-0 flex items-center justify-center degen-fig">
+<svg width="820" viewBox="0 70 720 160" role="img" aria-label="Degeneracy when the plane passes through a vertex, and its avoidance by offsetting">
+<g transform="translate(20,20)">
+<line x1="0" y1="140" x2="310" y2="140" class="sp dash"/>
+<polyline points="20,60 90,140 160,70 230,150 290,95" class="sk"/>
+<circle cx="221" cy="140" r="3.5" class="dot-plane"/>
+<circle cx="90" cy="140" r="3.5" class="dot-bad"/>
+<circle cx="90" cy="140" r="8" class="ring-bad"/>
+<line x1="86" y1="150" x2="72" y2="180" class="leader"/>
+<text x="70" y="198" class="mid small tbad">vertex exactly on the plane</text>
+</g>
+<g transform="translate(390,20)">
+<line x1="0" y1="140" x2="310" y2="140" class="sp dash faint"/>
+<line x1="0" y1="120" x2="310" y2="120" class="sp dash"/>
+<polyline points="20,60 90,140 160,70 230,150 290,95" class="sk"/>
+<circle cx="72" cy="120" r="3.5" class="dot-plane"/>
+<circle cx="110" cy="120" r="3.5" class="dot-plane"/>
+<circle cx="204" cy="120" r="3.5" class="dot-plane"/>
+<circle cx="263" cy="120" r="3.5" class="dot-plane"/>
+<line x1="14" y1="138" x2="14" y2="126" class="sp"/>
+<polygon points="14,118 9.5,127 18.5,127" class="fp"/>
+<text x="24" y="130" class="small tplane">m·ε</text>
+</g>
+</svg>
+</div>
+
+</div>
+
+<style>
+.degen-fig {
+  --plane: #A294F0;
+  --bad: #E5675F;
+  --ink: #E2E7EA;
+  --muted: #97A2AB;
+}
+.degen-fig svg text { font-family: inherit; font-size: 12.5px; fill: var(--muted); }
+.degen-fig svg .small { font-size: 11px; }
+.degen-fig svg .mid { text-anchor: middle; }
+.degen-fig svg .tplane { fill: var(--plane); font-weight: 600; }
+.degen-fig svg .tbad { fill: var(--bad); font-weight: 600; }
+.degen-fig svg .sk { stroke: var(--ink); stroke-width: 1.8; fill: none; }
+.degen-fig svg .sp { stroke: var(--plane); stroke-width: 1.6; fill: none; }
+.degen-fig svg .fp { fill: var(--plane); }
+.degen-fig svg .dash { stroke-dasharray: 7 5; }
+.degen-fig svg .faint { opacity: .32; }
+.degen-fig svg .leader { stroke: var(--muted); stroke-width: 1; }
+.degen-fig svg .dot-plane { fill: var(--plane); }
+.degen-fig svg .dot-bad { fill: var(--bad); }
+.degen-fig svg .ring-bad { fill: none; stroke: var(--bad); stroke-width: 2; }
+</style>
+
+<!--
+調査の結果、切断面に接する頂点やエッジがある場合に、切断面の構築に失敗するケースがあるということが分かりました。この問題に対する解決法も色々と提示されましたが、どれも少し負荷の高いものだったので、代替案として切断面のオフセットによるワークアラウンドを提案しました。このようなエッジケースを検出したら、切断面をずらすことで問題を回避してしまおう、というものですね。
+
+このワークアラウンドは効果てきめんで、その結果、冒頭にお見せしたような安定した動作を得ることができました。
+-->
+
+---
+layout: section
+---
+
+# その他に利用した機能
+
+<!--
+次に、このプロジェクトのインタラクティブ・デモの作成でいくつかの Unity AI の機能を利用したので、それについて触れておきたいと思います。
 -->
 
 ---
@@ -1623,18 +1724,14 @@ layout: two-cols-video
 </div>
 
 <!--
-その他に、このプロジェクトでは MCP Tools の機能も使用しました。これは AI Assistant に外部の MCP クライアントを登録して使えるようにするというものですね。MCP Server の機能と混同しないように気をつけて下さい。Unity MCP Server は外部の AI エージェントが Unity を操作可能にするもので、これは Unity AI Assistant から外部のツールを操作する、というものです。
+まず利用したのは MCP Tools の機能です。これは AI Assistant から外部の MCP クライアントを利用するというものです。MCP Server の機能と混同しないように気をつけて下さい。こっちは MCP クライアントを利用する機能ですね。 Unity 内の AI Assistant から外部のツールを、例えばここでは Bldner を、MCP で操作するわけです。
 
-ここでは 3D モデルを、いわゆるマニフォールドモデルとかソリッドモデルとか言われる「切断可能なモデル」に変換するための加工を Blender に行ってもらうことにしました。
-
-3D モデルをマニフォールドモデルに変換するには、Blender の機能をいくつか組み合わせて使用する必要があるのですが、この AI Assistant が自動的に行えるようにした訳ですね。
+ここでは 3D モデルを、いわゆるマニフォールドモデルとかソリッドモデルとか言われる「切断可能なタイプのモデル」に変換するのに、これを利用しました。AI Assistant から Blender を操作して、Blender 上でその変換を行ってもらうわけです。Unity プロジェクトに含まれる .glb ファイルをロードして、加工して、.glb ファイルとして再エクスポートしてもらう、という感じです。
 -->
 
 ---
 
 <div class="h-full flex flex-col">
-
-# MCP Tools 設定
 
 <img src="/ms-mcp-config.png" class="flex-1 min-h-0 w-full object-contain mt-4" />
 
@@ -1655,15 +1752,17 @@ MCP Tools 設定は Project Settings の中にあります。この "Enable MCP 
 </div>
 
 <!--
-また、その Blender の機能を呼び出す部分については、AI Assistant のスキル機能を活用することにしました。スキルというのは、AI エージェントによくある機能ですが、ツールの使い方や定型的な手続きを教えるための仕組みですね。これによって、Blender の機能をどういう風に呼び出せばスライス可能なモデルを作れるか、というのを教え込む事ができる訳です。
+また、その Blender 上での操作手順については、AI Assistant のスキル機能を活用することにしました。
 
-プロジェクト毎のスキルは "Assets/Skills" ディレクトリの中に配置します。
+スキルというのは、AI エージェントによくある機能ですが、ツールの使い方や定型的な手続きを教えるための仕組みですね。これによって、Blender の機能をどういう風に呼び出せばスライス可能なモデルを作れるか、教え込む事ができるわけです。
 
-スキル関係の設定は Preference の中にあります。ここに配置したプロジェクトスキルがリストアップされるはずです。デフォルトでは "Deny" になっていると思うので、"Allow" に変更して下さい。
+このようなプロジェクト毎のスキルは Assets の Skills ディレクトリの中に配置します。
 
-このような MCP Tools とスキルの組み合わせによって、マニフォールドモデル変換が完全に自動化されました。AI Assistant に「このモデルをマニフォールド化して」と命令すれば、あとは勝手に Blender を呼び出して変換してくれるようになったわけですね。
+スキル関係の設定は Preference の中にあります。ここに作成したプロジェクトスキルが表示されるはずです。デフォルトでは "Deny" になっているので "Allow" に変更しましょう。
 
-このように、AI Assistant の MCP Client 機能とスキル機能は、外部アプリやサービスとの連携を自動化するにあたって便利な機能ですので、そのような要素がある場合にはぜひ試してみて下さい。
+このように MCP Tools とスキルの組み合わせによって、マニフォールドモデル変換が完全に自動化されました。AI Assistant に「このモデルをスライス可能にして」と命令すれば、あとは勝手に Blender を呼び出して変換してくれるわけですね。
+
+このように、AI Assistant の MCP Client 機能とスキル機能は、外部アプリやサービスとの連携を自動化するにあたって便利な機能ですので、そのような要素がある場合にはぜひ活用してください。
 -->
 
 ---
@@ -1674,7 +1773,7 @@ MCP Tools 設定は Project Settings の中にあります。この "Enable MCP 
 - MCP Client 及びスキル機能は外部ツールとの連携に便利
 
 <!--
-まとめです。このように、MCP Server を使用することによって、外部エージェントを使った長時間タスクの実行が可能になります。最近は Unity AI でもフロンティアレベルのモデルが利用可能になってきているので、必ずしも外部のエージェントを使わなくてはならないという訳ではないですが、長時間タスクの実行や開発ループの構築に関しては、やはりメジャーなエージェントにノウハウが蓄積されていますので、そちらを使うメリットが大きいのかなと思いました。
+まとめです。このように、MCP Server を使用することによって、外部エージェントを使った長時間タスクの実行が可能になります。最近は Unity AI でもフロンティアグレードのモデルが使えるので、必ずしも外部のエージェントを使わなくてはならないという訳ではないですが、長時間タスクの実行や開発ループの構築に関しては、やはりメジャーなエージェントにコミュニティの知見が蓄積されていますので、そちらを使うメリットが大きいのかなと思いました。
 
-また、MCP Client 機能については、Unity AI Assistant から外部ツールを操作するのに使えることが分かりましたし、その手続きを整理するのにカスタムスキル機能が有効なことも分かりました。
+また、MCP Client 機能については、Unity AI Assistant から外部ツールを操作するのに使えることが分かりましたし、その手続きを整理するのにカスタムスキル機能が便利であることも確認できました。
 -->
