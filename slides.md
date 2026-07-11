@@ -441,7 +441,7 @@ layout: section
     <line x1="14" y1="2" x2="14" y2="95" stroke="currentColor" stroke-width="2" />
     <path d="M9 93 L14 102 L19 93 Z" fill="currentColor" stroke="none" />
   </svg>
-  <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-1 text-sm border rounded bg-white dark:bg-black" style="border-color: currentColor;">filtering</div>
+  <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-1 text-sm border rounded bg-black" style="border-color: currentColor;">filtering</div>
 </div>
 
 <div class="flex flex-col items-center gap-2">
