@@ -32,6 +32,42 @@
   background: #000;
 }
 
+/* Template bullet style: level 1 = arrow, level 2 = dash */
+.slidev-layout ul > li {
+  list-style: none;
+  position: relative;
+}
+
+.slidev-layout ul > li::before {
+  content: "";
+  position: absolute;
+  left: -1.7em;
+  top: 0.47em;
+  width: 0.8em;
+  height: 0.8em;
+  background: currentColor;
+  mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><line x1="4" y1="50" x2="92" y2="50" stroke="black" stroke-width="10.7"/><polyline points="48,6 92,50 48,94" fill="none" stroke="black" stroke-width="10.7"/></svg>') no-repeat center / contain;
+}
+
+.slidev-layout ul ul > li::before {
+  mask: none;
+  left: -1.3em;
+  width: 0.55em;
+  height: 0.09em;
+  top: 0.85em;
+}
+
+/* Inside blockquotes, fall back to a plain hyphen */
+.slidev-layout blockquote ul > li::before,
+.slidev-layout blockquote ul ul > li::before {
+  content: "-";
+  background: none;
+  mask: none;
+  width: auto;
+  height: auto;
+  top: 0;
+}
+
 .slidev-layout blockquote {
   margin-block: 1em;
 }
