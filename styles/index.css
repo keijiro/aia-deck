@@ -4,6 +4,10 @@
   font-family: 'PT Serif', 'Noto Serif JP', serif;
 }
 
+.slidev-layout blockquote {
+  margin-block: 1em;
+}
+
 .slidev-layout blockquote p {
   margin-block: 0.75em;
 }
