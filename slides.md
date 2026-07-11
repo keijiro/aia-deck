@@ -18,9 +18,7 @@ fonts:
   provider: google
 ---
 
-# Developing with Unity AI: Practical Use Cases
-
-## Keijiro Takahashi
+# Developing with Unity AI:<br>Practical Use Cases
 
 <!--
 みなさんこんにちは。Unity Technologies Japan の高橋啓治郎と申します。
@@ -244,7 +242,7 @@ layout: section
 -->
 
 ---
-layout: cover
+layout: chapter
 ---
 
 <BgVideo src="/mm-pr-hq.mp4" />
@@ -465,7 +463,7 @@ layout: section
 -->
 
 ---
-layout: cover
+layout: chapter
 ---
 
 <BgVideo src="/mh-pr-hq.mp4" />
@@ -985,7 +983,7 @@ layout: section
 -->
 
 ---
-layout: cover
+layout: chapter
 ---
 
 <BgVideo src="/dm-pr-hq.mp4" />
@@ -1434,7 +1432,7 @@ Unity を使用してきたユーザーの皆さんだったら、こういっ�
 -->
 
 ---
-layout: cover
+layout: chapter
 ---
 
 <BgVideo src="/ms-demo-hq.mp4" />
