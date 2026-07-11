@@ -1,7 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
+
+:root {
+  --slidev-theme-primary: #39AAFF;
+}
 
 .slidev-layout {
-  font-family: 'PT Serif', 'Noto Serif JP', serif;
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+}
+
+/* Base geometry derived from the Unite template (10x5.625in @ 98px/in):
+   side margin 0.70in = 69px, title top 0.90in = 88px, body top 1.50in = 147px,
+   title 18pt = 24.5px (Inter ExtraBold, white), body 12pt = 16.3px */
+.slidev-layout:not(.cover):not(.section) {
+  padding: 88px 69px 69px;
+  font-size: 16.3px;
+}
+
+.slidev-layout h1 {
+  color: #fff;
+  font-weight: 800;
+}
+
+.slidev-layout:not(.cover):not(.section) h1 {
+  font-size: 24.5px;
+  line-height: 43px;
+  margin-bottom: 16px;
+}
+
+.dark .slidev-layout {
+  background: #000;
 }
 
 .slidev-layout blockquote {

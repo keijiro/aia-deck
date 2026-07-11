@@ -14,7 +14,7 @@ comark: true
 duration: 40min
 
 fonts:
-  sans: PT Serif
+  sans: Inter
   provider: google
 ---
 
@@ -430,9 +430,9 @@ layout: section
 
 <div class="flex flex-col items-center gap-2">
   <div class="flex gap-4 items-center">
-    <DensityTile :n="11" :palette="['#c0392b', '#27ae60', '#2980b9', '#8e44ad', '#f39c12', '#16a085', '#e67e22', '#2c3e50']" />
+    <DensityTile :n="11" :palette="['#c0392b', '#27ae60', '#39AAFF', '#8e44ad', '#f39c12', '#16a085', '#e67e22', '#2c3e50']" />
     <DensityTile :n="8" :palette="['#e74c3c', '#3498db', '#f1c40f', '#9b59b6', '#1abc9c', '#e67e22']" />
-    <DensityTile :n="6" :palette="['#2980b9', '#e67e22']" :seed="42" />
+    <DensityTile :n="6" :palette="['#39AAFF', '#e67e22']" :seed="42" />
   </div>
 </div>
 
@@ -441,14 +441,14 @@ layout: section
     <line x1="14" y1="2" x2="14" y2="95" stroke="currentColor" stroke-width="2" />
     <path d="M9 93 L14 102 L19 93 Z" fill="currentColor" stroke="none" />
   </svg>
-  <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-1 text-sm border rounded bg-white dark:bg-[#121212]" style="border-color: currentColor;">filtering</div>
+  <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-1 text-sm border rounded bg-white dark:bg-black" style="border-color: currentColor;">filtering</div>
 </div>
 
 <div class="flex flex-col items-center gap-2">
   <div class="flex gap-4 items-center">
-    <DensityTile :n="6" :palette="['#2980b9', '#e67e22']" />
-    <DensityTile :n="6" :palette="['#2980b9', '#e67e22']" />
-    <DensityTile :n="6" :palette="['#2980b9', '#e67e22']" :seed="42" />
+    <DensityTile :n="6" :palette="['#39AAFF', '#e67e22']" />
+    <DensityTile :n="6" :palette="['#39AAFF', '#e67e22']" />
+    <DensityTile :n="6" :palette="['#39AAFF', '#e67e22']" :seed="42" />
   </div>
 </div>
 
@@ -547,13 +547,13 @@ image: /mh-heroes.png
 <path d="M0 0 L10 5 L0 10 Z" fill="currentColor" stroke="none" />
 </marker>
 <marker id="tlB" viewBox="0 0 10 10" markerWidth="7.5" markerHeight="7.5" refX="9" refY="5" orient="auto">
-<path d="M0 0 L10 5 L0 10 Z" fill="#2980b9" stroke="none" />
+<path d="M0 0 L10 5 L0 10 Z" fill="#39AAFF" stroke="none" />
 </marker>
 <marker id="tlO" viewBox="0 0 10 10" markerWidth="5.25" markerHeight="5.25" refX="9" refY="5" orient="auto">
 <path d="M0 0 L10 5 L0 10 Z" fill="#e67e22" stroke="none" />
 </marker>
 </defs>
-<path d="M40 220 C 84 87, 172 87, 216 214" stroke="#2980b9" stroke-width="2" marker-end="url(#tlB)" />
+<path d="M40 220 C 84 87, 172 87, 216 214" stroke="#39AAFF" stroke-width="2" marker-end="url(#tlB)" />
 <text x="130" y="286" text-anchor="middle" style="font-size:17px" fill="currentColor">パズル部分プロトタイプ</text>
 <text x="130" y="252" text-anchor="middle" style="font-size:15px" fill="currentColor" opacity="0.7">プラン＆実行</text>
 <text x="333" y="252" text-anchor="middle" style="font-size:15px" fill="currentColor" opacity="0.7">インクリメンタルな変更</text>
@@ -562,7 +562,7 @@ image: /mh-heroes.png
 <path d="M314 220 C 324 173, 342 173, 352 214" stroke="#e67e22" stroke-width="2" marker-end="url(#tlO)" />
 <path d="M356 220 C 366 173, 384 173, 394 214" stroke="#e67e22" stroke-width="2" marker-end="url(#tlO)" />
 <path d="M398 220 C 408 173, 426 173, 436 214" stroke="#e67e22" stroke-width="2" marker-end="url(#tlO)" />
-<path d="M450 220 C 494 87, 582 87, 626 214" stroke="#2980b9" stroke-width="2" marker-end="url(#tlB)" />
+<path d="M450 220 C 494 87, 582 87, 626 214" stroke="#39AAFF" stroke-width="2" marker-end="url(#tlB)" />
 <text x="540" y="286" text-anchor="middle" style="font-size:17px" fill="currentColor">RPG 部分プロトタイプ</text>
 <text x="540" y="252" text-anchor="middle" style="font-size:15px" fill="currentColor" opacity="0.7">プラン＆実行</text>
 <text x="743" y="252" text-anchor="middle" style="font-size:15px" fill="currentColor" opacity="0.7">インクリメンタルな変更</text>
