@@ -4,6 +4,29 @@ Slidev deck for a Unite Seoul 2026 session: "Developing with Unity AI:
 Practical Use Cases" (Keijiro Takahashi). Japanese content, ~86 slides.
 `pnpm run dev` to serve at http://localhost:3030/.
 
+## slides-kr.md — the translated deck
+
+`slides-kr.md` is a translation of `slides.md` for the Seoul audience,
+structurally identical (same slide count, layouts, videos, SVG geometry)
+but with a deliberate three-layer language split:
+
+- HTML comments (speaker notes) stay in **Japanese**, verbatim — they are
+  the presenter's script.
+- All on-slide text is **English**: headings, bullets, and text inside SVG
+  figures (`<text>` elements and labels like "Interactive/Autonomous").
+- Text inside `<blockquote>` elements is **Korean** — blockquotes are
+  reserved for prompt examples and AI-response quotes, so they represent
+  "what a local user would type/see". Structure inside them (nested `##`
+  headings, bullet lists, `...` continuation markers, 🤖 prefixes) is
+  preserved.
+
+When editing `slides.md`, mirror the change into `slides-kr.md` following
+that split. Serve it with `pnpm exec slidev slides-kr.md --port 3030`
+(`pnpm run dev` serves the Japanese deck; both default to port 3030, so
+only one runs at a time). Hangul is not in the Inter Google-Fonts subset
+declared in the headmatter; it renders via system-font fallback, which
+looks fine but is not template-exact (add Noto Sans KR if that matters).
+
 ## The design mimics the official Unite template
 
 The visual theme replicates Unity's official "Unite 2026 Seoul - General
