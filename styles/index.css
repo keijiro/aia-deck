@@ -57,21 +57,37 @@
   top: 0.85em;
 }
 
-/* Inside blockquotes, fall back to a plain hyphen */
+/* Inside blockquotes, use a plain dot placed right before the text */
 .slidev-layout blockquote ul > li::before,
 .slidev-layout blockquote ul ul > li::before {
-  content: "-";
+  content: "•";
   background: none;
   mask: none;
   width: auto;
   height: auto;
   top: 0;
+  left: -0.95em;
 }
 
 .slidev-layout blockquote {
   margin-block: 1em;
+  font-size: 0.8em;
+  line-height: 1.5;
+}
+
+.slidev-layout blockquote h2 {
+  font-size: 1em;
+  line-height: inherit;
+  font-weight: 700;
+  margin-top: 1em;
+  margin-bottom: 0.45em;
 }
 
 .slidev-layout blockquote p {
-  margin-block: 0.75em;
+  margin-block: 0.45em;
+  line-height: 1.5;
+}
+
+.slidev-layout blockquote li {
+  line-height: 1.5;
 }

@@ -29,7 +29,7 @@ const style = computed(() => ({
 </script>
 
 <template>
-  <div class="grid grid-cols-2 w-full h-full auto-rows-fr">
+  <div class="grid grid-cols-2 w-full h-full auto-rows-fr bg-black">
     <div class="slidev-layout default" :class="props.class">
       <slot />
     </div>
