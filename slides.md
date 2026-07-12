@@ -1775,3 +1775,13 @@ MCP Tools 設定は Project Settings の中にあります。この "Enable MCP 
 
 また、MCP Client 機能については、Unity AI Assistant から外部ツールを操作するのに使えることが分かりましたし、その手続きを整理するのにカスタムスキル機能が便利であることも確認できました。
 -->
+
+---
+
+<img src="/unite-thankyou-bg.jpg" class="absolute inset-0 w-full h-full object-cover" style="transform: scaleY(-1)" />
+
+<div class="absolute flex items-center" style="left:7%; top:21.9%; width:30.9%; height:56.4%">
+  <h1 style="font-size:49px; line-height:1.25">Thank you</h1>
+</div>
+
+<div class="absolute bg-white" style="left:54%; top:26.8%; width:26%; height:46.2%"></div>
