@@ -8,6 +8,7 @@ const props = defineProps({
   brightness: { type: Number, default: 0.4 },
   scale: { type: Number, default: 1.1 },
   printTimestamp: { type: [Number, String], default: 3 },
+  printPoster: { type: String, default: null },
 })
 
 const { $renderContext } = useSlideContext()
@@ -15,6 +16,12 @@ const { isPrintMode } = useNav()
 
 // In print/export contexts, show a fixed frame instead of playing.
 const noPlay = computed(() => isPrintMode.value || !['slide', 'presenter'].includes($renderContext.value))
+
+// Poster shown in print/export (headless browsers do not paint seeked video
+// frames); defaults to a "-print.jpg" image next to the video.
+const poster = computed(() => noPlay.value
+  ? (props.printPoster ?? props.src.replace(/\.mp4$/, '-print.jpg'))
+  : undefined)
 
 function onLoadedMetadata(ev: Event) {
   const element = ev.target as HTMLMediaElement
@@ -27,6 +34,8 @@ function onLoadedMetadata(ev: Event) {
   <div class="absolute inset-0 -z-1">
     <video
       :autoplay="!noPlay"
+      :poster="poster"
+      :preload="noPlay ? 'none' : 'auto'"
       muted loop playsinline
       class="w-full h-full object-cover"
       :style="{

@@ -38,7 +38,7 @@ layout: section
 
 ---
 
-<SlidevVideo autoplay autoreset="slide" :muted="$renderContext !== 'slide'" class="absolute inset-0 w-full h-full object-cover" print-timestamp="3">
+<SlidevVideo autoplay autoreset="slide" :muted="$renderContext !== 'slide'" class="absolute inset-0 w-full h-full object-cover" print-timestamp="3" print-poster="/mm-pr-hq-print.jpg">
   <source src="/mm-pr-hq.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -48,7 +48,7 @@ layout: section
 
 # Mirror Mage
 
-<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4" print-timestamp="3">
+<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4" print-timestamp="3" print-poster="/mm-pr-hq-print.jpg">
   <source src="/mm-pr-hq.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -60,7 +60,7 @@ layout: section
 
 ---
 
-<SlidevVideo autoplay autoreset="slide" :muted="$renderContext !== 'slide'" class="absolute inset-0 w-full h-full object-cover" print-timestamp="3">
+<SlidevVideo autoplay autoreset="slide" :muted="$renderContext !== 'slide'" class="absolute inset-0 w-full h-full object-cover" print-timestamp="3" print-poster="/mh-pr-hq-print.jpg">
   <source src="/mh-pr-hq.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -70,7 +70,7 @@ layout: section
 
 # Dungeon Match Heroes
 
-<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4" print-timestamp="3">
+<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4" print-timestamp="3" print-poster="/mh-pr-hq-print.jpg">
   <source src="/mh-pr-hq.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -82,7 +82,7 @@ layout: section
 
 ---
 
-<SlidevVideo autoplay autoreset="slide" :muted="$renderContext !== 'slide'" class="absolute inset-0 w-full h-full object-cover" print-timestamp="3">
+<SlidevVideo autoplay autoreset="slide" :muted="$renderContext !== 'slide'" class="absolute inset-0 w-full h-full object-cover" print-timestamp="3" print-poster="/dm-pr-hq-print.jpg">
   <source src="/dm-pr-hq.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -92,7 +92,7 @@ layout: section
 
 # Drift Mayhem
 
-<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4" print-timestamp="3">
+<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4" print-timestamp="3" print-poster="/dm-pr-hq-print.jpg">
   <source src="/dm-pr-hq.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -108,7 +108,7 @@ layout: section
 
 # Mesh Slicer
 
-<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4" print-timestamp="3">
+<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4" print-timestamp="3" print-poster="/ms-demo-hq-print.jpg">
   <source src="/ms-demo-hq.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -265,7 +265,7 @@ layout: two-cols-video
 
 ::right::
 
-<SlidevVideo muted autoplay loop print-timestamp="3">
+<SlidevVideo muted autoplay loop print-timestamp="3" print-poster="/mm-pr-hq-print.jpg">
   <source src="/mm-pr-hq.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -314,7 +314,7 @@ layout: section
 
 # 最初のプロトタイプ
 
-<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4" print-timestamp="10">
+<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4" print-timestamp="10" print-poster="/mm-reflex-shooter-print.jpg">
   <source src="/mm-reflex-shooter.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -489,7 +489,7 @@ layout: two-cols-video
 
 ::right::
 
-<SlidevVideo muted autoplay loop print-timestamp="3">
+<SlidevVideo muted autoplay loop print-timestamp="3" print-poster="/mh-pr-hq-print.jpg">
   <source src="/mh-pr-hq.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -788,7 +788,7 @@ image: /mh-image-board.png
 <div class="flex items-center justify-center gap-3 mt-8">
   <img src="/mh-golem-base.jpg" class="w-36 rounded" />
   <div class="text-2xl opacity-60">→</div>
-  <SlidevVideo muted autoplay loop class="w-36 rounded">
+  <SlidevVideo muted autoplay loop class="w-36 rounded" print-poster="/mh-golem-attack-print.jpg">
     <source src="/mh-golem-attack.mp4" type="video/mp4" />
   </SlidevVideo>
   <div class="text-2xl opacity-60">→</div>
@@ -872,7 +872,7 @@ layout: two-cols-video
 
 ::right::
 
-<SlidevVideo muted autoplay loop>
+<SlidevVideo muted autoplay loop print-poster="/mh-particle-system-print.jpg">
   <source src="/mh-particle-system.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -1006,7 +1006,7 @@ layout: two-cols-video
 
 ::right::
 
-<SlidevVideo muted autoplay loop print-timestamp="3">
+<SlidevVideo muted autoplay loop print-timestamp="3" print-poster="/dm-pr-hq-print.jpg">
   <source src="/dm-pr-hq.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -1070,7 +1070,7 @@ layout: two-cols-video
 
 ::right::
 
-<SlidevVideo muted autoplay loop>
+<SlidevVideo muted autoplay loop print-poster="/dm-ground-generation-print.jpg">
   <source src="/dm-ground-generation.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -1096,7 +1096,7 @@ layout: two-cols-video
 
 ::right::
 
-<SlidevVideo muted autoplay loop>
+<SlidevVideo muted autoplay loop print-poster="/dm-wrong-shader-print.jpg">
   <source src="/dm-wrong-shader.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -1168,7 +1168,7 @@ layout: two-cols-video
 
 ::right::
 
-<SlidevVideo muted autoplay loop>
+<SlidevVideo muted autoplay loop print-poster="/dm-physics-arcade-style-print.jpg">
   <source src="/dm-physics-arcade-style.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -1453,7 +1453,7 @@ layout: chapter
 - 3D モデルを任意の平面で切断する機能
 - インタラクティブデモ
 
-<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4" print-timestamp="3">
+<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4" print-timestamp="3" print-poster="/ms-demo-hq-print.jpg">
   <source src="/ms-demo-hq.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -1582,7 +1582,7 @@ Unityにおいてメッシュオブジェクトを自由な平面で切断する
 
 <div class="h-full flex flex-col">
 
-<SlidevVideo muted autoplay controls class="flex-1 min-h-0 w-full object-contain">
+<SlidevVideo muted autoplay controls class="flex-1 min-h-0 w-full object-contain" print-poster="/ms-long-session-print.jpg">
   <source src="/ms-long-session.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -1626,7 +1626,7 @@ layout: two-cols-video
 
 ::right::
 
-<SlidevVideo muted autoplay loop>
+<SlidevVideo muted autoplay loop print-poster="/ms-corner-cases-print.jpg">
   <source src="/ms-corner-cases.mp4" type="video/mp4" />
 </SlidevVideo>
 
