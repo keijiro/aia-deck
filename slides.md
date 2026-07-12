@@ -38,7 +38,7 @@ layout: section
 
 ---
 
-<SlidevVideo autoplay autoreset="slide" :muted="$renderContext !== 'slide'" class="absolute inset-0 w-full h-full object-cover">
+<SlidevVideo autoplay autoreset="slide" :muted="$renderContext !== 'slide'" class="absolute inset-0 w-full h-full object-cover" print-timestamp="3">
   <source src="/mm-pr-hq.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -48,7 +48,7 @@ layout: section
 
 # Mirror Mage
 
-<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4">
+<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4" print-timestamp="3">
   <source src="/mm-pr-hq.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -60,7 +60,7 @@ layout: section
 
 ---
 
-<SlidevVideo autoplay autoreset="slide" :muted="$renderContext !== 'slide'" class="absolute inset-0 w-full h-full object-cover">
+<SlidevVideo autoplay autoreset="slide" :muted="$renderContext !== 'slide'" class="absolute inset-0 w-full h-full object-cover" print-timestamp="3">
   <source src="/mh-pr-hq.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -70,7 +70,7 @@ layout: section
 
 # Dungeon Match Heroes
 
-<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4">
+<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4" print-timestamp="3">
   <source src="/mh-pr-hq.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -82,7 +82,7 @@ layout: section
 
 ---
 
-<SlidevVideo autoplay autoreset="slide" :muted="$renderContext !== 'slide'" class="absolute inset-0 w-full h-full object-cover">
+<SlidevVideo autoplay autoreset="slide" :muted="$renderContext !== 'slide'" class="absolute inset-0 w-full h-full object-cover" print-timestamp="3">
   <source src="/dm-pr-hq.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -92,7 +92,7 @@ layout: section
 
 # Drift Mayhem
 
-<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4">
+<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4" print-timestamp="3">
   <source src="/dm-pr-hq.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -108,7 +108,7 @@ layout: section
 
 # Mesh Slicer
 
-<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4">
+<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4" print-timestamp="3">
   <source src="/ms-demo-hq.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -265,7 +265,7 @@ layout: two-cols-video
 
 ::right::
 
-<SlidevVideo muted autoplay loop>
+<SlidevVideo muted autoplay loop print-timestamp="3">
   <source src="/mm-pr-hq.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -314,7 +314,7 @@ layout: section
 
 # 最初のプロトタイプ
 
-<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4">
+<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4" print-timestamp="10">
   <source src="/mm-reflex-shooter.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -489,7 +489,7 @@ layout: two-cols-video
 
 ::right::
 
-<SlidevVideo muted autoplay loop>
+<SlidevVideo muted autoplay loop print-timestamp="3">
   <source src="/mh-pr-hq.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -1006,7 +1006,7 @@ layout: two-cols-video
 
 ::right::
 
-<SlidevVideo muted autoplay loop>
+<SlidevVideo muted autoplay loop print-timestamp="3">
   <source src="/dm-pr-hq.mp4" type="video/mp4" />
 </SlidevVideo>
 
@@ -1453,7 +1453,7 @@ layout: chapter
 - 3D モデルを任意の平面で切断する機能
 - インタラクティブデモ
 
-<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4">
+<SlidevVideo muted autoplay loop class="flex-1 min-h-0 w-full object-contain mt-4" print-timestamp="3">
   <source src="/ms-demo-hq.mp4" type="video/mp4" />
 </SlidevVideo>
 
