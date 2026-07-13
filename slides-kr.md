@@ -1476,7 +1476,7 @@ layout: chapter
 - Testing long-running tasks with the MCP Server and an external agent
 
 <div class="flex-1 min-h-0 flex items-center justify-center">
-  <svg width="570" height="190" viewBox="-120 0 570 190" fill="none" stroke="currentColor" stroke-width="2">
+  <svg width="600" height="190" viewBox="-120 0 600 190" fill="none" stroke="currentColor" stroke-width="2">
     <defs>
       <marker id="ahB72" viewBox="0 0 10 10" markerWidth="6" markerHeight="6" refX="9" refY="5" orient="auto">
         <path d="M0 0 L10 5 L0 10 Z" fill="currentColor" stroke="none" />
@@ -1488,9 +1488,7 @@ layout: chapter
     <path d="M195 146 V161 Q195 171 205 171 H265 Q275 171 275 161 V38 Q275 28 265 28 H205 Q195 28 195 38 V70" marker-end="url(#ahB72)" stroke-linecap="round" stroke-linejoin="round" />
     <text x="115" y="76" text-anchor="middle" dominant-baseline="central" style="font-size:34px" stroke="none" fill="currentColor">📄</text>
     <text x="300" y="100" text-anchor="middle" dominant-baseline="central" style="font-size:34px" stroke="none" fill="currentColor">⚙️</text>
-    <text x="385" y="78" text-anchor="middle" dominant-baseline="central" style="font-size:17px" stroke="none" fill="currentColor">Tens of minutes</text>
-    <text x="385" y="100" text-anchor="middle" dominant-baseline="central" style="font-size:17px" stroke="none" fill="currentColor">to</text>
-    <text x="385" y="122" text-anchor="middle" dominant-baseline="central" style="font-size:17px" stroke="none" fill="currentColor">hours</text>
+    <text x="345" y="100" text-anchor="middle" dominant-baseline="central" style="font-size:34px" stroke="none" fill="currentColor">🕐</text>
   </svg>
 </div>
 

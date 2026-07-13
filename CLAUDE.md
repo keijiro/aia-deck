@@ -21,7 +21,10 @@ but with a deliberate three-layer language split:
   preserved.
 
 When editing `slides.md`, mirror the change into `slides-kr.md` following
-that split. Serve it with `pnpm exec slidev slides-kr.md --port 3030`
+that split. One intentional divergence: on the Mesh Slicer "Development
+Background" slide, the duration label next to the agent-loop figure is
+text in `slides.md` (数十分〜数時間) but emoji (⚙️🕐, slightly wider
+viewBox) in `slides-kr.md` — do not "re-sync" it. Serve it with `pnpm exec slidev slides-kr.md --port 3030`
 (`pnpm run dev` serves the Japanese deck; both default to port 3030, so
 only one runs at a time). Hangul is not in the Inter Google-Fonts subset
 declared in the headmatter; it renders via system-font fallback, which
