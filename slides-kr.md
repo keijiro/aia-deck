@@ -1814,6 +1814,36 @@ hide: true
 
 ---
 
+<div class="h-full grid grid-cols-2 grid-rows-2 gap-2">
+
+<SlidevVideo muted autoplay loop class="w-full h-full object-cover" print-timestamp="3" print-poster="/mm-pr-hq-print.jpg">
+  <source src="/mm-pr-hq.mp4" type="video/mp4" />
+</SlidevVideo>
+
+<SlidevVideo muted autoplay loop class="w-full h-full object-cover" print-timestamp="3" print-poster="/mh-pr-hq-print.jpg">
+  <source src="/mh-pr-hq.mp4" type="video/mp4" />
+</SlidevVideo>
+
+<SlidevVideo muted autoplay loop class="w-full h-full object-cover" print-timestamp="3" print-poster="/dm-pr-hq-print.jpg">
+  <source src="/dm-pr-hq.mp4" type="video/mp4" />
+</SlidevVideo>
+
+<SlidevVideo muted autoplay loop class="w-full h-full object-cover" print-timestamp="3" print-poster="/ms-demo-hq-print.jpg">
+  <source src="/ms-demo-hq.mp4" type="video/mp4" />
+</SlidevVideo>
+
+</div>
+
+<!--
+さて、最後の方は駆け足になりましたが、４つのプロジェクトについてお話ししてきました。
+
+最後にお伝えしたいのは、AI については技術の進化が目まぐるしく、状況は刻々と変化していると言うことです。僕がこの資料を用意している間にも様々な変化がありましたし、今後も変化が続くはずです。これが正解、と言う確固たる答えは存在せず、頻繁に自分の考えを更新していく必要があります。
+
+このような変化についていくには、みんなでその考えを共有していくことが重要だと思います。ぜひ皆さんの考えも様々なチャンネルを通して共有して頂ければと思います。
+-->
+
+---
+
 <img src="/unite-thankyou-bg.jpg" class="absolute inset-0 w-full h-full object-cover" style="transform: scaleY(-1)" />
 
 <div class="absolute flex items-center" style="left:7%; top:21.9%; width:30.9%; height:56.4%">
@@ -1821,3 +1851,7 @@ hide: true
 </div>
 
 <div class="absolute bg-white" style="left:54%; top:26.8%; width:26%; height:46.2%"></div>
+
+<!--
+以上で僕のセッションは終了です。ご清聴ありがとうございました。
+-->
