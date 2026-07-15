@@ -2,7 +2,7 @@
 theme: seriph
 title: Unity AI Examples
 colorSchema: dark
-class: text-center
+layout: default
 
 drawings:
   persist: false
@@ -16,6 +16,20 @@ duration: 40min
 fonts:
   sans: Inter
   provider: google
+---
+
+<div class="h-full flex flex-col items-center justify-center text-center gap-10" style="color:#ff4444">
+  <div class="text-3xl font-extrabold" style="line-height:1.5">
+    This session will be presented from<br>the speaker's laptop using a custom presentation app.
+  </div>
+  <div class="text-3xl font-extrabold" style="line-height:1.5">
+    This PPTX file is for review purposes only.<br>It does not contain any videos or audio.
+  </div>
+</div>
+
+---
+layout: cover
+class: text-center
 ---
 
 # Developing with Unity AI:<br>Practical Use Cases
