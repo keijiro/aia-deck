@@ -6,6 +6,7 @@ class: text-center
 
 drawings:
   persist: false
+  syncAll: false
 
 transition: slide-left
 

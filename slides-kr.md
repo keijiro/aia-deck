@@ -6,6 +6,7 @@ layout: default
 
 drawings:
   persist: false
+  syncAll: false
 
 transition: slide-left
 
