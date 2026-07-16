@@ -1,0 +1,1 @@
+var e=`/aia-deck/ms-demo-hq.mp4`;export{e as t};

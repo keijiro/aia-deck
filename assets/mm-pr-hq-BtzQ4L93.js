@@ -1,0 +1,1 @@
+var e=`/aia-deck/mm-pr-hq.mp4`;export{e as t};
