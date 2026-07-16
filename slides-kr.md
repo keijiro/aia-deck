@@ -19,12 +19,24 @@ fonts:
   provider: google
 ---
 
-<div class="h-full flex flex-col items-center justify-center text-center gap-10" style="color:#ff4444">
-  <div class="text-3xl font-extrabold" style="line-height:1.5">
-    This session will be presented from<br>the speaker's laptop using a custom presentation app.
+<div class="absolute inset-0 flex items-center justify-center" style="color:#ff4444">
+  <div class="flex flex-col items-center text-center gap-10 border-2 px-16 py-12" style="border-color:#ff4444">
+    <div class="text-3xl font-extrabold" style="line-height:1.5">
+      This session will be presented from<br>the speaker's laptop using a custom presentation app.
+    </div>
+    <div class="text-3xl font-extrabold" style="line-height:1.5">
+      This PPTX file is for review purposes only.<br>It does not contain any videos or audio.
+    </div>
   </div>
-  <div class="text-3xl font-extrabold" style="line-height:1.5">
-    This PPTX file is for review purposes only.<br>It does not contain any videos or audio.
+</div>
+
+---
+
+<div class="absolute inset-0 flex items-center justify-center" style="color:#39AAFF">
+  <div class="flex flex-col items-center text-center border-2 px-16 py-12" style="border-color:#39AAFF">
+    <div class="text-3xl font-extrabold" style="line-height:1.5">
+      Click anywhere on the main screen<br>to allow video playback with audio.
+    </div>
   </div>
 </div>
 
