@@ -2,6 +2,7 @@
 theme: seriph
 title: Unity AI Examples
 colorSchema: dark
+routerMode: hash
 layout: default
 
 drawings:

@@ -3,10 +3,12 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "slidev build",
+    "build": "slidev build --base /aia-deck/",
+    "build:kr": "slidev build slides-kr.md --base /aia-deck/",
     "dev": "slidev --open",
-    "export:pdf": "slidev export --format pdf --wait 1500 --wait-until load --timeout 90000",
-    "export:pptx": "slidev export --format pptx --wait 1500 --wait-until load --timeout 90000"
+    "dev:kr": "slidev slides-kr.md --open",
+    "export": "slidev export --format pptx --wait 1500 --wait-until load --timeout 90000",
+    "export:kr": "slidev export slides-kr.md --format pptx --wait 1500 --wait-until load --timeout 90000"
   },
   "dependencies": {
     "@slidev/theme-default": "latest",
