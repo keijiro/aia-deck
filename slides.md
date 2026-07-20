@@ -42,6 +42,12 @@ fonts:
 </div>
 
 ---
+hideBrand: true
+---
+
+<img src="/unite-cover.png" class="absolute inset-0 w-full h-full object-cover" />
+
+---
 layout: cover
 class: text-center
 ---

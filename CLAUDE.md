@@ -51,7 +51,12 @@ not — don't "clean them up":
   (top-left), "UNITE/" (bottom-left, white at 35% opacity per the template),
   "U/" (bottom-right). The SVG paths were machine-converted from the
   template's vector shapes. It must stay `global-top` (not `global-bottom`),
-  otherwise the opaque slide background covers it.
+  otherwise the opaque slide background covers it. A slide can opt out with
+  `hideBrand: true` in its frontmatter (used by slide 3, the full-bleed
+  "UNITE/2026 SEOUL" cover image — `public/unite-cover.png`, the template's
+  page 1 — whose artwork already contains the branding); global-top reads
+  the current slide's frontmatter via the `$$slidev-context` injection,
+  which works in both play and print/export modes.
 - `public/unite-*.png|jpg` are backgrounds extracted from the template. The
   thank-you background is intentionally flipped (`scaleY(-1)`) because the
   template places that image with flipH + 180° rotation.
