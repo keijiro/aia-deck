@@ -1,34 +1,25 @@
 # CLAUDE.md
 
-Slidev deck for a Unite Seoul 2026 session: "Developing with Unity AI:
-Practical Use Cases" (Keijiro Takahashi). Japanese content, ~86 slides.
-`pnpm run dev` to serve at http://localhost:3030/.
+Slidev deck for "Developing with Unity AI: Practical Use Cases" (Keijiro
+Takahashi). Japanese content, ~86 slides. Originally built for Unite Seoul
+2026 (already presented); `slides.md` is now being reworked for an upcoming
+Japanese-audience presentation. `pnpm run dev` to serve at
+http://localhost:3030/.
 
-## slides-kr.md — the translated deck
+## slides-kr.md — the Seoul deck (frozen archive)
 
-`slides-kr.md` is a translation of `slides.md` for the Seoul audience,
-structurally identical (same slide count, layouts, videos, SVG geometry)
-but with a deliberate three-layer language split:
+`slides-kr.md` is the deck as presented at Unite Seoul 2026. The session is
+over: do NOT mirror `slides.md` edits into it anymore — the two decks have
+intentionally diverged (as of July 2026, `slides.md` dropped the review
+warning slide and gained new roadmap/CLI-demo slides) and will not be
+re-synced. Only touch `slides-kr.md` if explicitly asked.
 
-- HTML comments (speaker notes) stay in **Japanese**, verbatim — they are
-  the presenter's script.
-- All on-slide text is **English**: headings, bullets, and text inside SVG
-  figures (`<text>` elements and labels like "Interactive/Autonomous").
-- Text inside `<blockquote>` elements is **Korean** — blockquotes are
-  reserved for prompt examples and AI-response quotes, so they represent
-  "what a local user would type/see". Structure inside them (nested `##`
-  headings, bullet lists, `...` continuation markers, 🤖 prefixes) is
-  preserved.
-
-When editing `slides.md`, mirror the change into `slides-kr.md` following
-that split. One intentional divergence: on the Mesh Slicer "Development
-Background" slide, the duration label next to the agent-loop figure is
-text in `slides.md` (数十分〜数時間) but emoji (⚙️🕐, slightly wider
-viewBox) in `slides-kr.md` — do not "re-sync" it. Serve it with `pnpm exec slidev slides-kr.md --port 3030`
+For reference, it was a translation of the then-identical `slides.md` with
+a three-layer language split: speaker notes (HTML comments) in Japanese,
+on-slide text in English, `<blockquote>` prompt/response examples in
+Korean. Serve it with `pnpm exec slidev slides-kr.md --port 3030`
 (`pnpm run dev` serves the Japanese deck; both default to port 3030, so
-only one runs at a time). Hangul is not in the Inter Google-Fonts subset
-declared in the headmatter; it renders via system-font fallback, which
-looks fine but is not template-exact (add Noto Sans KR if that matters).
+only one runs at a time).
 
 ## The design mimics the official Unite template
 
